@@ -13,7 +13,7 @@ const goodColor = "rgba(71, 185, 48, 0.77)";
 const highColor = "rgba(255, 132, 31, 0.77)";
 const veryHighColor = "rgba(190, 27, 27, 0.77)";
 
-const [value, setValue] = useState(150);
+const [value, setValue] = useState(100);
 const [meterColor, setMeterColor] = useState(defaultMeterColor);
 const [minValue, setMinValue] = useState(100);
 const [maxValue, setMaxValue] = useState(200);
@@ -61,6 +61,7 @@ useEffect(() => {
       <div className='flex flex-col items-center justify-center'>
         <GaugeChart
           dataUnit=""
+          
           needleCurrentValue={value}
           minValue={minValue}
           maxValue={maxValue}
