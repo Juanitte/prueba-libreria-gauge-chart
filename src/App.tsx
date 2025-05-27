@@ -21,14 +21,25 @@ const [veryLowLimit, setVeryLowLimit] = useState(120);
 const [lowLimit, setLowLimit] = useState(130);
 const [highLimit, setHighLimit] = useState(170);
 const [veryHighLimit, setVeryHighLimit] = useState(180);
-/*
+
+// Generar valores para que se mueva la aguja
 useEffect(() => {
   const interval = setInterval(() => {
-    setValue((prevValue) => (prevValue + 2) % 101);
+    setValue(prev => {
+      if (prev < minValue) {
+        return minValue;
+      }
+      const siguiente = prev + 2;
+      if (siguiente > maxValue) {
+        return minValue;
+      }
+      return siguiente;
+    });
   }, 500);
+
   return () => clearInterval(interval);
-}, []);
-*/
+}, [minValue, maxValue]);
+
 useEffect(() => {
   if (value <= veryLowLimit && value >= minValue) {
     setMeterColor(veryLowColor);
@@ -57,8 +68,7 @@ useEffect(() => {
           lowLimit={lowLimit}
           highLimit={highLimit}
           veryHighLimit={veryHighLimit}
-          needleWidth={5}
-          canvasWidth={400}
+          needleWidth={2}
           meterColor={meterColor}
            />
       </div>
