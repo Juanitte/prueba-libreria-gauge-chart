@@ -13,13 +13,13 @@ const goodColor = "rgba(71, 185, 48, 0.77)";
 const highColor = "rgba(255, 132, 31, 0.77)";
 const veryHighColor = "rgba(190, 27, 27, 0.77)";
 
-const [value, setValue] = useState(120);
+const [value, setValue] = useState(10);
 const [meterColor, setMeterColor] = useState(defaultMeterColor);
-const [minValue, setMinValue] = useState(100);
+const [minValue, setMinValue] = useState(0);
 const [maxValue, setMaxValue] = useState(200);
-const [veryLowLimit, setVeryLowLimit] = useState(120);
-const [lowLimit, setLowLimit] = useState(130);
-const [highLimit, setHighLimit] = useState(170);
+const [veryLowLimit, setVeryLowLimit] = useState(50);
+const [lowLimit, setLowLimit] = useState(100);
+const [highLimit, setHighLimit] = useState(150);
 const [veryHighLimit, setVeryHighLimit] = useState(180);
 
 // Generar valores para que se mueva la aguja
